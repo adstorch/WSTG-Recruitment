@@ -12,6 +12,17 @@ ep.dat <- readRDS(
   'Data\\Response\\EpData.rds'
 )
 
+## define URL parameters
+### start month
+sMonth <- 5
+### start day
+sDay <- 1
+### end month
+eMonth <- 7
+### end day
+eDay <- 31
+
+## extract predictor (outflow)
 urlCont <- getURL(
   paste0(
     'https://www.cbr.washington.edu/dart/cs/php/rpt/mg.php?sc=1&mgconfig=river&outputFormat=csv&',
@@ -53,9 +64,15 @@ urlCont <- getURL(
     'year%5B%5D=1989&',
     'loc%5B%5D=MCN&',
     'data%5B%5D=Outflow&',
-    'startdate=4%2F1&',
-    'enddate=7%2F31&',
-    'avgyear=0&',
+    'startdate=',
+    sMonth,
+    '%2F',
+    sDay,
+    '&enddate=',
+    eMonth,
+    '%2F',
+    eDay,
+    '&avgyear=0&',
     'consolidate=1&',
     'grid=1&',
     'y1min=0&',

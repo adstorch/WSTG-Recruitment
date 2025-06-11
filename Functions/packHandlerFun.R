@@ -16,7 +16,8 @@ packHandler <- function(){
     'htmltools',
     'copula',
     'RCurl',
-    'tibble'
+    'tibble',
+    'mcp'
   )
   
   ### install or load packages
